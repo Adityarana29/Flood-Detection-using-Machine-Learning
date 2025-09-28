@@ -52,7 +52,7 @@ This project is an **interactive dashboard** that integrates:
 
 ---
 
-
+Made By- Aditya Rana
 M.Tech Thesis Project – Terrain-Based Route Planning & Flood Risk AI
 
 ⚡ Bridging satellite data, weather intelligence, and AI for disaster resilience.
