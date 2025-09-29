@@ -14,7 +14,7 @@ import plotly.express as px
 
 # — Initialize Earth Engine —
 ee.Authenticate
-ee.Initialize(project='western-rider-346015')
+ee.Initialize(project='Place your GEE project ID')
 
 st.set_page_config(
     page_title="Flood & Weather Risk Dashboard",
@@ -241,3 +241,4 @@ if run:
 
 else:
     st.info("Adjust settings in sidebar and click 'Run Analysis'.")
+
