@@ -16,11 +16,16 @@ import seaborn as sns
 import ee
 import streamlit as st
 
+import ee
+import streamlit as st
+
 credentials = ee.ServiceAccountCredentials(
-    st.secrets["ee"]["adityarana@western-rider-346015.iam.gserviceaccount.com"],
-    key_data=st.secrets["ee"]["MIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQDEM8U4W1pB9oDu\nSREdK3wdCtr5o+HgH3rVjSm11Iqe+E6ZdkFYi6uBJIJK2F5fEI4nCrdDrgE9eHM/\nvALUcyOjtTDoxhR1A6S1e87qVUa7sWSa1bJNKCya264PisXoayk3Lr9SI/OKUVvR\nIs+/ORZU3mi0qb7MbwzS2J0kHMTtlida4775DH1NDAvPUgFeeE81ggJroUi1qaKW\nh99EaUc7CPed8FClF+JYwZbFS5ibMMoOwX2uffjsPJVFZHvGqBcNTmTQ1XRKMMUY\nbcoMKzS6QfjU2UuEpWXqM54CaGtUXgaOZIywd4chK/ruXOYoh1jgqrIjW57CBq3C\nDgk+c7PhAgMBAAECggEAWkQ1Nr30swddfwOXv5NbiSMO5q6Kw2nIQgqth23PDt9P\njhQVcU7k60foN9X+6P69X+Hyuc0K3gSWBVsS9Do6yd0ZMOa8z68K7sIUysPMBJtT\nHVc2rn/OsbpjBNyEO+9daXl05S4MJHVU6E17Rc9WYlpm0sOLuBNZU4H8HfqscV+G\nFjbTbuqenbRjKeBG21hQifBp9X/V5m5lsZkAXLcpQrZIognorTTDT3y6HCLm2C2w\nXJvgvo0HJQdBzvkFe7BnG0xVP26rETh6JqD3x0V4FHwf/VxAN0u/yAEHqDKtgNC7\ntjqyxgW/vLyp1h9T4S13BS/kPeL87OmkBH64n7NRVwKBgQD1Bg9u7Dhy5LwqCqdQ\nr1KBH1ovcsbVf96eSFNU4ScP2E/50BC4PJ2PQ2hU26Z83a2JgtEnepkoI0RoaqxR\nf6ViLs6wwUAkWtUc1yYKSclKMib9E93WjQ1Gk8cPYKkAHRaJYQYyilEcQFBdb/ci\nKCaVJIDaWwh97+8+Rn0NrEGLwwKBgQDM/dL6ezH91JHPuUkqtCfUu3/F+3/1qNPk\nfM/bWdNYC5WuUWuB+906z7FQvyVYGSd3OP9s7qkKhQisbhXf66D2PVz8SXR1W40y\nJt+6oQi70DV4OEVoe0b6fKMPbhw0frhejoRil0XA6YpLAavby8J725ZeV1YFUz5a\nIdzV3q/biwKBgBTawTGFtYBB66oAYiFB6tnGm1xyfm3phj8elMkiqLp2hMgUZ3fm\n4NoyuIyQbWkvTPfpRHgBvUtnRQlGGwiMvrzOkxUEPbtaZ80emsRBZ3qDLkJYEIeU\nVc7uAQFUDs5Nq39h3K8sip7G8pAhWX10wWPsSXNMUDq30zsPsNEbGjEVAoGATlDS\n39tdOAqUQnYZW/VEGmQf5rW1J1d+zJZamwTwV3zljJmSpzBgTu22YpEEZWoGx+fA\nvg9YCarVq3rLZKcS8cBz2/b8RTHa+cQcSaLoQUjEhM+KxOYEMgKYEXcR04RuT8HH\nFhuRDKisqwdSb0CjZsp34kcfmB07fxfc1OCk8w0CgYAajgoSfUdPmQ9q+rUSejKG\nQ7mjAZhEYHU8OQDj3IKBzWZY42riTOzR0O/g4bwL5fhUKq+yE/9yC2OM11C6BI1R\n3DGNsE55VCpzI7YEiEwSruIN+P+09UX7ZqoS9Sblv8EWS2Ndzf8pwC66FCcvgGP4\nwvE16OtG+5paxxk6O5Z9uA=="]
+    st.secrets["ee"]["service_account"],
+    key_data=st.secrets["ee"]["private_key"]
 )
+
 ee.Initialize(credentials)
+
 
 st.set_page_config(page_title="Flood & Weather Risk + ML Dashboard",
                    layout="wide", page_icon="🌊")
@@ -244,6 +249,7 @@ if run:
 
 else:
     st.info("Adjust parameters and click **Run Analysis** to begin.")
+
 
 
 
