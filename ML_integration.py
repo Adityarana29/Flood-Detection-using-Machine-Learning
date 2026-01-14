@@ -20,11 +20,9 @@ import streamlit as st
 import ee
 import streamlit as st
 
-service_account_info = dict(st.secrets["gee"])
-
 credentials = ee.ServiceAccountCredentials(
-    service_account_info["client_email"],
-    key_data=json.dumps(service_account_info)
+    st.secrets["ee"]["service_account"],
+    key_data=st.secrets["ee"]["private_key"]
 )
 
 ee.Initialize(credentials)
@@ -252,6 +250,7 @@ if run:
 
 else:
     st.info("Adjust parameters and click **Run Analysis** to begin.")
+
 
 
 
