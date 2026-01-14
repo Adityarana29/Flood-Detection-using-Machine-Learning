@@ -3,7 +3,7 @@ streamlit>=1.30.0
 # Data handling
 pandas
 numpy
-
+json
 # Google Earth Engine & maps
 earthengine-api
 geemap
