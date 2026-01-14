@@ -1,13 +1,22 @@
-streamlit
+streamlit>=1.30.0
+
+# Data handling
 pandas
 numpy
-scikit-learn
-requests
-pydeck
 
-# Google Earth Engine
+# Google Earth Engine & maps
 earthengine-api
 geemap
-
-# Mapping backend (required by geemap)
 folium
+
+# APIs & utilities
+requests
+
+# Visualization
+pydeck
+plotly
+matplotlib
+seaborn
+
+# Machine Learning
+scikit-learn
