@@ -20,17 +20,12 @@ import streamlit as st
 import ee
 import streamlit as st
 
-@st.cache_resource
-def init_ee():
-    service_account_info = dict(st.secrets["gee"])
-
-    credentials = ee.ServiceAccountCredentials(
-        service_account_info["client_email"],
-        key_data=json.dumps(service_account_info)
-    )
-    ee.Initialize(credentials)
-
-init_ee()
+service_account_info = dict(st.secrets["gee"]) 
+credentials = ee.ServiceAccountCredentials( 
+    service_account_info["client_email"], 
+    key_data=json.dumps(service_account_info) 
+) 
+ee.Initialize(credentials)
 
 st.set_page_config(page_title="Flood & Weather Risk + ML Dashboard",
                    layout="wide", page_icon="🌊")
@@ -254,6 +249,7 @@ if run:
 
 else:
     st.info("Adjust parameters and click **Run Analysis** to begin.")
+
 
 
 
