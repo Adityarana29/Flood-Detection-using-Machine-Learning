@@ -20,13 +20,17 @@ import streamlit as st
 import ee
 import streamlit as st
 
-credentials = ee.ServiceAccountCredentials(
-    st.secrets["ee"]["service_account"],
-    key_data=st.secrets["ee"]["private_key"]
-)
+@st.cache_resource
+def init_ee():
+    service_account_info = dict(st.secrets["gee"])
 
-ee.Initialize(credentials)
+    credentials = ee.ServiceAccountCredentials(
+        service_account_info["client_email"],
+        key_data=json.dumps(service_account_info)
+    )
+    ee.Initialize(credentials)
 
+init_ee()
 
 st.set_page_config(page_title="Flood & Weather Risk + ML Dashboard",
                    layout="wide", page_icon="🌊")
